@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.BuckshotCounter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorSecondary">@color/blue</item>
+        <item name="colorSecondary">@color/green</item>
 
         <item name="colorOnBackground">@color/gray</item>
     </style>

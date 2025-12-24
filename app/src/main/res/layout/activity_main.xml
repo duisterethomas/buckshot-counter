@@ -128,6 +128,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -135,6 +136,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -142,6 +144,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -170,6 +173,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -177,6 +181,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -184,6 +189,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -212,6 +218,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -219,6 +226,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -226,6 +234,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -254,6 +263,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -261,6 +271,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -268,6 +279,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -296,6 +308,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -303,6 +316,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -310,6 +324,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -338,6 +353,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -345,6 +361,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -352,6 +369,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -380,6 +398,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -387,6 +406,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -394,6 +414,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -422,6 +443,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
+                        android:id="@+id/buttonLive8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -429,6 +451,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
+                        android:id="@+id/buttonBlank8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -436,6 +459,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:clickable="false"
                     android:id="@+id/checkbox8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BaseButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:minWidth">56dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="PlusButton" parent="BaseButton">
+        <item name="backgroundTint">@color/green</item>
+    </style>
+
+    <style name="MinusButton" parent="BaseButton">
+        <item name="backgroundTint">@color/red</item>
+    </style>
+</resources>

@@ -180,8 +180,8 @@ class MainActivity : AppCompatActivity() {
                     buttonStartReset.text = "Reset"
 
                     //Hide plus buttons
-                    buttonPlusBlank.visibility = View.INVISIBLE
-                    buttonPlusLive.visibility = View.INVISIBLE
+                    buttonPlusBlank.visibility = View.GONE
+                    buttonPlusLive.visibility = View.GONE
 
                     //Change minus buttons to shot
                     buttonMinusBlank.text = "Shot"

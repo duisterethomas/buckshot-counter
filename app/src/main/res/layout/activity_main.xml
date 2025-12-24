@@ -18,83 +18,111 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center">
 
             <!-- Live counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:gravity="center">
 
-                <com.google.android.material.button.MaterialButton
-                    style="@style/PlusButton"
-                    android:id="@+id/buttonPlusLive"
+                <!-- Buttons -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+" />
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp">
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/PlusButton"
+                        android:id="@+id/buttonPlusLive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Live"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/MinusButton"
+                        android:id="@+id/buttonMinusLive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textViewLive"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textAlignment="center"
-                    android:textSize="30sp" />
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/MinusButton"
-                    android:id="@+id/buttonMinusLive"
+                <!-- Text -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-" />
+                    android:minWidth="66dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Live"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewLive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                </LinearLayout>
             </LinearLayout>
 
             <!-- Blank counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:gravity="center">
 
-                <com.google.android.material.button.MaterialButton
-                    style="@style/PlusButton"
-                    android:id="@+id/buttonPlusBlank"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="+" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Blank"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewBlank"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textAlignment="center"
-                    android:textSize="30sp" />
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/MinusButton"
-                    android:id="@+id/buttonMinusBlank"
+                <!-- Text -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-" />
+                    android:minWidth="66dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Blank"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewBlank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                </LinearLayout>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/PlusButton"
+                        android:id="@+id/buttonPlusBlank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/MinusButton"
+                        android:id="@+id/buttonMinusBlank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -103,24 +131,24 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="20dp">
+            android:paddingBottom="20dp"
+            android:paddingTop="10dp">
 
             <!-- Shell 1 -->
             <LinearLayout
                 android:id="@+id/shell1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="1"
                     android:textAlignment="textEnd"
-                    android:paddingHorizontal="10dp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
@@ -147,6 +175,7 @@
 
                 <CheckBox
                     android:clickable="false"
+                    android:minWidth="50dp"
                     android:id="@+id/checkbox1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -157,17 +186,16 @@
                 android:id="@+id/shell2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="2"
                     android:textAlignment="textEnd"
-                    android:paddingHorizontal="10dp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
@@ -196,7 +224,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
 
             <!-- Shell 3 -->
@@ -204,14 +233,14 @@
                 android:id="@+id/shell3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="3"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="10dp"
@@ -243,7 +272,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
 
             <!-- Shell 4 -->
@@ -251,14 +281,14 @@
                 android:id="@+id/shell4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="4"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="10dp"
@@ -290,7 +320,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
 
             <!-- Shell 5 -->
@@ -298,14 +329,14 @@
                 android:id="@+id/shell5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="5"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="10dp"
@@ -337,7 +368,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
 
             <!-- Shell 6 -->
@@ -345,14 +377,14 @@
                 android:id="@+id/shell6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="6"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="10dp"
@@ -384,7 +416,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
 
             <!-- Shell 7 -->
@@ -392,14 +425,14 @@
                 android:id="@+id/shell7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="7"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="10dp"
@@ -431,7 +464,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox7"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
 
             <!-- Shell 8 -->
@@ -439,14 +473,14 @@
                 android:id="@+id/shell8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
                 android:gravity="center"
                 android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:paddingRight="16dp"
                     android:text="8"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="10dp"
@@ -478,7 +512,8 @@
                     android:clickable="false"
                     android:id="@+id/checkbox8"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -489,6 +524,7 @@
             android:id="@+id/buttonStartReset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start" />
+            android:text="Start"
+            android:minWidth="56dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,6 +45,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/ShotLiveButton"
+                        android:id="@+id/buttonShotLive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shot"
+                        android:visibility="gone"/>
                 </LinearLayout>
 
                 <!-- Text -->
@@ -122,6 +130,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/ShotBlankButton"
+                        android:id="@+id/buttonShotBlank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shot"
+                        android:visibility="gone"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

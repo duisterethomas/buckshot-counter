@@ -32,9 +32,12 @@ class MainActivity : AppCompatActivity() {
         val buttonPlusLive = findViewById<MaterialButton>(R.id.buttonPlusLive)
         val textViewLive = findViewById<TextView>(R.id.textViewLive)
         val buttonMinusLive = findViewById<MaterialButton>(R.id.buttonMinusLive)
+        val buttonShotLive = findViewById<MaterialButton>(R.id.buttonShotLive)
+
         val buttonPlusBlank = findViewById<MaterialButton>(R.id.buttonPlusBlank)
         val textViewBlank = findViewById<TextView>(R.id.textViewBlank)
         val buttonMinusBlank = findViewById<MaterialButton>(R.id.buttonMinusBlank)
+        val buttonShotBlank = findViewById<MaterialButton>(R.id.buttonShotBlank)
 
         val buttonToggleGroup1 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup1)
         val checkbox1 = findViewById<CheckBox>(R.id.checkbox1)
@@ -136,11 +139,7 @@ class MainActivity : AppCompatActivity() {
                 if (liveCount != 0) {
                     liveCount --
                     textViewLive.text = liveCount.toString()
-                    if (currentShot == 0) {
-                        updateShells()
-                    } else {
-                        shellShot(true)
-                    }
+                    updateShells()
                 }
             }
 
@@ -158,11 +157,26 @@ class MainActivity : AppCompatActivity() {
                 if (blankCount != 0) {
                     blankCount --
                     textViewBlank.text = blankCount.toString()
-                    if (currentShot == 0) {
-                        updateShells()
-                    } else {
-                        shellShot(false)
-                    }
+                    updateShells()
+                }
+            }
+
+        //Link the shot buttons
+        buttonShotLive
+            .setOnClickListener {
+                if (liveCount != 0) {
+                    liveCount --
+                    textViewLive.text = liveCount.toString()
+                    shellShot(true)
+                }
+            }
+
+        buttonShotBlank
+            .setOnClickListener {
+                if (blankCount != 0) {
+                    blankCount --
+                    textViewBlank.text = blankCount.toString()
+                    shellShot(false)
                 }
             }
 
@@ -179,15 +193,15 @@ class MainActivity : AppCompatActivity() {
 
                     buttonStartReset.text = "Reset"
 
-                    //Hide plus buttons
-                    buttonPlusBlank.visibility = View.GONE
+                    //Hide plus and minus buttons
                     buttonPlusLive.visibility = View.GONE
+                    buttonMinusLive.visibility = View.GONE
+                    buttonPlusBlank.visibility = View.GONE
+                    buttonMinusBlank.visibility = View.GONE
 
-                    //Change minus buttons to shot
-                    buttonMinusBlank.text = "Shot"
-                    buttonMinusBlank.textSize = 14f
-                    buttonMinusLive.text = "Shot"
-                    buttonMinusLive.textSize = 14f
+                    //Show shot buttons
+                    buttonShotLive.visibility = View.VISIBLE
+                    buttonShotBlank.visibility = View.VISIBLE
                 } else {
                     //Reset the game
                     currentShot = 0
@@ -240,15 +254,15 @@ class MainActivity : AppCompatActivity() {
 
                     buttonStartReset.text = "Start"
 
-                    //Show plus buttons
-                    buttonPlusBlank.visibility = View.VISIBLE
+                    //Show plus and minus buttons
                     buttonPlusLive.visibility = View.VISIBLE
+                    buttonMinusLive.visibility = View.VISIBLE
+                    buttonPlusBlank.visibility = View.VISIBLE
+                    buttonMinusBlank.visibility = View.VISIBLE
 
-                    //Change minus buttons to -
-                    buttonMinusBlank.text = "-"
-                    buttonMinusBlank.textSize = 20f
-                    buttonMinusLive.text = "-"
-                    buttonMinusLive.textSize = 20f
+                    //Hide shot buttons
+                    buttonShotLive.visibility = View.GONE
+                    buttonShotBlank.visibility = View.GONE
                 }
             }
     }

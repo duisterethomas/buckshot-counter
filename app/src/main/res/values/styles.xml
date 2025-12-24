@@ -5,8 +5,11 @@
         <item name="textAllCaps">false</item>
     </style>
 
-    <style name="BaseCounterButton" parent="BaseButton">
+    <style name="BaseThinButton" parent="BaseButton">
         <item name="android:minWidth">56dp</item>
+    </style>
+
+    <style name="BaseCounterButton" parent="BaseThinButton">
         <item name="android:textSize">20sp</item>
     </style>
 
@@ -16,6 +19,14 @@
 
     <style name="MinusButton" parent="BaseCounterButton">
         <item name="backgroundTint">@color/red</item>
+    </style>
+
+    <style name="ShotLiveButton" parent="BaseThinButton">
+        <item name="backgroundTint">@color/red</item>
+    </style>
+
+    <style name="ShotBlankButton" parent="BaseThinButton">
+        <item name="backgroundTint">@color/blue</item>
     </style>
 
     <style name="BlankButton" parent="BaseButton">

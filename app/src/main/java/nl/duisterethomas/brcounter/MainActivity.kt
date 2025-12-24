@@ -1,12 +1,12 @@
 package nl.duisterethomas.brcounter
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,27 +22,27 @@ class MainActivity : AppCompatActivity() {
         var blankCount = 0
         var liveCount = 0
 
-        //Link the buttons
-        findViewById<Button>(R.id.buttonPlusBlank)
+        //Link the counter buttons
+        findViewById<MaterialButton>(R.id.buttonPlusBlank)
             .setOnClickListener {
                 blankCount ++
                 findViewById<TextView>(R.id.textViewBlank).text = blankCount.toString()
             }
 
-        findViewById<Button>(R.id.buttonMinusBlank)
+        findViewById<MaterialButton>(R.id.buttonMinusBlank)
             .setOnClickListener {
                 if (blankCount != 0) {
                     blankCount --
                     findViewById<TextView>(R.id.textViewBlank).text = blankCount.toString()
                 }
             }
-        findViewById<Button>(R.id.buttonPlusLive)
+        findViewById<MaterialButton>(R.id.buttonPlusLive)
             .setOnClickListener {
                 liveCount ++
                 findViewById<TextView>(R.id.textViewLive).text = liveCount.toString()
             }
 
-        findViewById<Button>(R.id.buttonMinusLive)
+        findViewById<MaterialButton>(R.id.buttonMinusLive)
             .setOnClickListener {
                 if (liveCount != 0) {
                     liveCount --

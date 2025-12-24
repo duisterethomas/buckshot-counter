@@ -1,6 +1,8 @@
 package nl.duisterethomas.brcounter
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,36 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        var blankCount = 0
+        var liveCount = 0
+
+        //Link the buttons
+        findViewById<Button>(R.id.buttonPlusBlank)
+            .setOnClickListener {
+                blankCount ++
+                findViewById<TextView>(R.id.textViewBlank).text = blankCount.toString()
+            }
+
+        findViewById<Button>(R.id.buttonMinusBlank)
+            .setOnClickListener {
+                if (blankCount != 0) {
+                    blankCount --
+                    findViewById<TextView>(R.id.textViewBlank).text = blankCount.toString()
+                }
+            }
+        findViewById<Button>(R.id.buttonPlusLive)
+            .setOnClickListener {
+                liveCount ++
+                findViewById<TextView>(R.id.textViewLive).text = liveCount.toString()
+            }
+
+        findViewById<Button>(R.id.buttonMinusLive)
+            .setOnClickListener {
+                if (liveCount != 0) {
+                    liveCount --
+                    findViewById<TextView>(R.id.textViewLive).text = liveCount.toString()
+                }
+            }
     }
 }

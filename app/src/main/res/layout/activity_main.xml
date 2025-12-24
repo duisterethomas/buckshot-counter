@@ -103,6 +103,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <!-- Shell 1 -->
             <LinearLayout
@@ -121,6 +122,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -140,6 +142,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -161,6 +164,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -180,6 +184,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -201,6 +206,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -220,6 +226,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -241,6 +248,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -260,6 +268,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -281,6 +290,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -300,6 +310,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -321,6 +332,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -340,6 +352,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -361,6 +374,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -380,6 +394,7 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -401,6 +416,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/buttonToggleGroup8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
@@ -420,9 +436,18 @@
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <CheckBox
+                    android:id="@+id/checkbox8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
+
+        <!-- Clear button -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/ClearButton"
+            android:id="@+id/buttonClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

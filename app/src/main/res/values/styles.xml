@@ -25,4 +25,8 @@
     <style name="LiveButton" parent="BaseButton">
         <item name="backgroundTint">@color/live_button_bg</item>
     </style>
+
+    <style name="ClearButton" parent="BaseButton">
+        <item name="backgroundTint">@color/red</item>
+    </style>
 </resources>

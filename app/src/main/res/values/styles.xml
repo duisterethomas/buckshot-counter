@@ -7,7 +7,7 @@
     </style>
 
     <style name="BaseCounterButton" parent="BaseButton">
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="PlusButton" parent="BaseCounterButton">

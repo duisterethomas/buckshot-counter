@@ -13,17 +13,15 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
+        <!-- Counters -->
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:orientation="horizontal"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:gravity="center">
 
+            <!-- Blank counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="Blank"
                     android:textAlignment="center"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -51,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:text="0"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <com.google.android.material.button.MaterialButton
                     style="@style/MinusButton"
@@ -61,6 +59,7 @@
                     android:text="-" />
             </LinearLayout>
 
+            <!-- Live counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:text="Live"
                     android:textAlignment="center"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -88,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:text="0"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <com.google.android.material.button.MaterialButton
                     style="@style/MinusButton"
@@ -99,15 +98,13 @@
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Known shells -->
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            tools:layout_editor_absoluteX="1dp">
+
+            <!-- Shell 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -147,6 +144,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -186,6 +184,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 3 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -225,6 +224,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 4 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -264,6 +264,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 5 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -303,6 +304,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 6 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -342,6 +344,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 7 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -381,6 +384,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <!-- Shell 8 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

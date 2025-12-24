@@ -1,11 +1,15 @@
 package nl.duisterethomas.brcounter
 
+import android.content.res.ColorStateList
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.CheckBox
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
@@ -25,8 +29,12 @@ class MainActivity : AppCompatActivity() {
         //Keep screen on
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        val textViewBlank = findViewById<TextView>(R.id.textViewBlank)
+        val buttonPlusLive = findViewById<MaterialButton>(R.id.buttonPlusLive)
         val textViewLive = findViewById<TextView>(R.id.textViewLive)
+        val buttonMinusLive = findViewById<MaterialButton>(R.id.buttonMinusLive)
+        val buttonPlusBlank = findViewById<MaterialButton>(R.id.buttonPlusBlank)
+        val textViewBlank = findViewById<TextView>(R.id.textViewBlank)
+        val buttonMinusBlank = findViewById<MaterialButton>(R.id.buttonMinusBlank)
 
         val buttonToggleGroup1 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup1)
         val checkbox1 = findViewById<CheckBox>(R.id.checkbox1)
@@ -45,13 +53,28 @@ class MainActivity : AppCompatActivity() {
         val buttonToggleGroup8 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup8)
         val checkbox8 = findViewById<CheckBox>(R.id.checkbox8)
 
+        val buttonStartReset = findViewById<MaterialButton>(R.id.buttonStartReset)
+
         var blankCount = 0
         var liveCount = 0
         var currentShot = 0
 
-        fun shellShot(live: Boolean) {
-            currentShot ++
+        //Automatically show/hide shell rows
+        fun updateShells() {
+            val totalShells = blankCount + liveCount
 
+            findViewById<LinearLayout>(R.id.shell1).visibility = if (totalShells >= 1) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell2).visibility = if (totalShells >= 2) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell3).visibility = if (totalShells >= 3) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell4).visibility = if (totalShells >= 4) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell5).visibility = if (totalShells >= 5) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell6).visibility = if (totalShells >= 6) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell7).visibility = if (totalShells >= 7) { View.VISIBLE } else { View.INVISIBLE }
+            findViewById<LinearLayout>(R.id.shell8).visibility = if (totalShells >= 8) { View.VISIBLE } else { View.INVISIBLE }
+        }
+
+        //Auto note shot
+        fun shellShot(live: Boolean) {
             when (currentShot) {
                 1 -> {
                     checkbox1.isChecked = true
@@ -94,82 +117,139 @@ class MainActivity : AppCompatActivity() {
                     buttonToggleGroup8.isEnabled = false
                 }
             }
+
+            currentShot ++
         }
 
         //Link the counter buttons
-        findViewById<MaterialButton>(R.id.buttonPlusBlank)
+        buttonPlusLive
             .setOnClickListener {
-                blankCount ++
-                textViewBlank.text = blankCount.toString()
-            }
-
-        findViewById<MaterialButton>(R.id.buttonMinusBlank)
-            .setOnClickListener {
-                if (blankCount != 0) {
-                    blankCount --
-                    textViewBlank.text = blankCount.toString()
-                    shellShot(false)
+                if ((blankCount + liveCount) != 8) {
+                    liveCount++
+                    textViewLive.text = liveCount.toString()
+                    updateShells()
                 }
             }
-        findViewById<MaterialButton>(R.id.buttonPlusLive)
-            .setOnClickListener {
-                liveCount ++
-                textViewLive.text = liveCount.toString()
-            }
 
-        findViewById<MaterialButton>(R.id.buttonMinusLive)
+        buttonMinusLive
             .setOnClickListener {
                 if (liveCount != 0) {
                     liveCount --
                     textViewLive.text = liveCount.toString()
-                    shellShot(true)
+                    if (currentShot == 0) {
+                        updateShells()
+                    } else {
+                        shellShot(true)
+                    }
+                }
+            }
+
+        buttonPlusBlank
+            .setOnClickListener {
+                if ((blankCount + liveCount) != 8) {
+                    blankCount ++
+                    textViewBlank.text = blankCount.toString()
+                    updateShells()
+                }
+            }
+
+        buttonMinusBlank
+            .setOnClickListener {
+                if (blankCount != 0) {
+                    blankCount --
+                    textViewBlank.text = blankCount.toString()
+                    if (currentShot == 0) {
+                        updateShells()
+                    } else {
+                        shellShot(false)
+                    }
                 }
             }
 
         //Link the clear button
-        findViewById<MaterialButton>(R.id.buttonClear)
+        buttonStartReset
             .setOnClickListener {
-                //Reset counters
-                blankCount = 0
-                liveCount = 0
-                textViewBlank.text = blankCount.toString()
-                textViewLive.text = liveCount.toString()
+                if (currentShot == 0) {
+                    //Start the game
+                    currentShot = 1
 
-                //Reset known shells
-                buttonToggleGroup1.isEnabled = true
-                buttonToggleGroup1.clearChecked()
-                checkbox1.isChecked = false
+                    // Change the button to reset
+                    buttonStartReset.backgroundTintList =
+                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red))
 
-                buttonToggleGroup2.isEnabled = true
-                buttonToggleGroup2.clearChecked()
-                checkbox2.isChecked = false
+                    buttonStartReset.text = "Reset"
 
-                buttonToggleGroup3.isEnabled = true
-                buttonToggleGroup3.clearChecked()
-                checkbox3.isChecked = false
+                    //Hide plus buttons
+                    buttonPlusBlank.visibility = View.INVISIBLE
+                    buttonPlusLive.visibility = View.INVISIBLE
 
-                buttonToggleGroup4.isEnabled = true
-                buttonToggleGroup4.clearChecked()
-                checkbox4.isChecked = false
+                    //Change minus buttons to shot
+                    buttonMinusBlank.text = "Shot"
+                    buttonMinusBlank.textSize = 14f
+                    buttonMinusLive.text = "Shot"
+                    buttonMinusLive.textSize = 14f
+                } else {
+                    //Reset the game
+                    currentShot = 0
 
-                buttonToggleGroup5.isEnabled = true
-                buttonToggleGroup5.clearChecked()
-                checkbox5.isChecked = false
+                    //Reset counters
+                    blankCount = 0
+                    liveCount = 0
+                    textViewBlank.text = blankCount.toString()
+                    textViewLive.text = liveCount.toString()
 
-                buttonToggleGroup6.isEnabled = true
-                buttonToggleGroup6.clearChecked()
-                checkbox6.isChecked = false
+                    //Reset known shells
+                    buttonToggleGroup1.isEnabled = true
+                    buttonToggleGroup1.clearChecked()
+                    checkbox1.isChecked = false
 
-                buttonToggleGroup7.isEnabled = true
-                buttonToggleGroup7.clearChecked()
-                checkbox7.isChecked = false
+                    buttonToggleGroup2.isEnabled = true
+                    buttonToggleGroup2.clearChecked()
+                    checkbox2.isChecked = false
 
-                buttonToggleGroup8.isEnabled = true
-                buttonToggleGroup8.clearChecked()
-                checkbox8.isChecked = false
+                    buttonToggleGroup3.isEnabled = true
+                    buttonToggleGroup3.clearChecked()
+                    checkbox3.isChecked = false
 
-                //Reset current shot
-                currentShot = 0
+                    buttonToggleGroup4.isEnabled = true
+                    buttonToggleGroup4.clearChecked()
+                    checkbox4.isChecked = false
+
+                    buttonToggleGroup5.isEnabled = true
+                    buttonToggleGroup5.clearChecked()
+                    checkbox5.isChecked = false
+
+                    buttonToggleGroup6.isEnabled = true
+                    buttonToggleGroup6.clearChecked()
+                    checkbox6.isChecked = false
+
+                    buttonToggleGroup7.isEnabled = true
+                    buttonToggleGroup7.clearChecked()
+                    checkbox7.isChecked = false
+
+                    buttonToggleGroup8.isEnabled = true
+                    buttonToggleGroup8.clearChecked()
+                    checkbox8.isChecked = false
+
+                    //Reset visibility
+                    updateShells()
+
+                    // Change the button to start
+                    buttonStartReset.backgroundTintList =
+                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green))
+
+                    buttonStartReset.text = "Start"
+
+                    //Show plus buttons
+                    buttonPlusBlank.visibility = View.VISIBLE
+                    buttonPlusLive.visibility = View.VISIBLE
+
+                    //Change minus buttons to -
+                    buttonMinusBlank.text = "-"
+                    buttonMinusBlank.textSize = 20f
+                    buttonMinusLive.text = "-"
+                    buttonMinusLive.textSize = 20f
+                }
             }
     }
 }

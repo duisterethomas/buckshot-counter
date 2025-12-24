@@ -21,50 +21,19 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <!-- Blank counter -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Blank"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/PlusButton"
-                    android:id="@+id/buttonPlusBlank"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="+" />
-
-                <TextView
-                    android:id="@+id/textViewBlank"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textAlignment="center"
-                    android:textSize="30sp" />
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/MinusButton"
-                    android:id="@+id/buttonMinusBlank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-" />
-            </LinearLayout>
-
             <!-- Live counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/PlusButton"
+                    android:id="@+id/buttonPlusLive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -73,13 +42,6 @@
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/PlusButton"
-                    android:id="@+id/buttonPlusLive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+" />
 
                 <TextView
                     android:id="@+id/textViewLive"
@@ -96,6 +58,44 @@
                     android:layout_height="wrap_content"
                     android:text="-" />
             </LinearLayout>
+
+            <!-- Blank counter -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/PlusButton"
+                    android:id="@+id/buttonPlusBlank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Blank"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewBlank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/MinusButton"
+                    android:id="@+id/buttonMinusBlank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Known shells -->
@@ -107,11 +107,13 @@
 
             <!-- Shell 1 -->
             <LinearLayout
+                android:id="@+id/shell1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -152,11 +154,13 @@
 
             <!-- Shell 2 -->
             <LinearLayout
+                android:id="@+id/shell2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -197,11 +201,13 @@
 
             <!-- Shell 3 -->
             <LinearLayout
+                android:id="@+id/shell3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -242,11 +248,13 @@
 
             <!-- Shell 4 -->
             <LinearLayout
+                android:id="@+id/shell4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -287,11 +295,13 @@
 
             <!-- Shell 5 -->
             <LinearLayout
+                android:id="@+id/shell5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -332,11 +342,13 @@
 
             <!-- Shell 6 -->
             <LinearLayout
+                android:id="@+id/shell6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -377,11 +389,13 @@
 
             <!-- Shell 7 -->
             <LinearLayout
+                android:id="@+id/shell7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -422,11 +436,13 @@
 
             <!-- Shell 8 -->
             <LinearLayout
+                android:id="@+id/shell8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="invisible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -466,12 +482,13 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Clear button -->
+        <!-- Start/Reset button -->
         <com.google.android.material.button.MaterialButton
-            style="@style/ClearButton"
-            android:id="@+id/buttonClear"
+            android:backgroundTint="@color/green"
+            style="@style/BaseButton"
+            android:id="@+id/buttonStartReset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear" />
+            android:text="Start" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

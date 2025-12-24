@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "nl.duisterethomas.brcounter"
+    namespace = "nl.duisterethomas.buckshotcounter"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "nl.duisterethomas.brcounter"
+        applicationId = "nl.duisterethomas.buckshotcounter"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

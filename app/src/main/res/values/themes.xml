@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.BRCounter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.Theme.BuckshotCounter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorSecondary">@color/blue</item>
 
         <item name="colorOnBackground">@color/gray</item>
     </style>
 
-    <style name="Theme.BRCounter" parent="Base.Theme.BRCounter" />
+    <style name="Theme.BuckshotCounter" parent="Base.Theme.BuckshotCounter" />
 </resources>

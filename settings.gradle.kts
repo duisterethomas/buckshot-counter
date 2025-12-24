@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BR Counter"
+rootProject.name = "Buckshot Counter"
 include(":app")

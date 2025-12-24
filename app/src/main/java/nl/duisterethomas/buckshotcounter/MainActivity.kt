@@ -1,4 +1,4 @@
-package nl.duisterethomas.brcounter
+package nl.duisterethomas.buckshotcounter
 
 import android.content.res.ColorStateList
 import android.os.Bundle

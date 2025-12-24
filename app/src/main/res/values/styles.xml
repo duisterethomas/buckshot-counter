@@ -4,6 +4,7 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:textColor">@color/white</item>
         <item name="cornerRadius">10dp</item>
+        <item name="textAllCaps">false</item>
     </style>
 
     <style name="PlusButton" parent="BaseButton">
@@ -12,5 +13,13 @@
 
     <style name="MinusButton" parent="BaseButton">
         <item name="backgroundTint">@color/red</item>
+    </style>
+
+    <style name="BlankButton" parent="BaseButton">
+        <item name="backgroundTint">@color/blank_button_bg</item>
+    </style>
+
+    <style name="LiveButton" parent="BaseButton">
+        <item name="backgroundTint">@color/live_button_bg</item>
     </style>
 </resources>

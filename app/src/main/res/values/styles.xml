@@ -11,19 +11,11 @@
     </style>
 
     <style name="PlusButton" parent="BaseCounterButton">
-        <item name="backgroundTint">@color/green</item>
+        <item name="backgroundTint">@color/green_button_bg</item>
     </style>
 
     <style name="MinusButton" parent="BaseCounterButton">
-        <item name="backgroundTint">@color/red</item>
-    </style>
-
-    <style name="ShotLiveButton" parent="BaseThinButton">
-        <item name="backgroundTint">@color/red</item>
-    </style>
-
-    <style name="ShotBlankButton" parent="BaseThinButton">
-        <item name="backgroundTint">@color/blue</item>
+        <item name="backgroundTint">@color/red_button_bg</item>
     </style>
 
     <style name="BlankButton" parent="BaseButton">

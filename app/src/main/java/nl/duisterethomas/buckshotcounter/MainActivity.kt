@@ -151,90 +151,96 @@ class MainActivity : AppCompatActivity() {
         //Link the counter buttons
         buttonPlus1
             .setOnClickListener {
-                if ((blankCount + liveCount) != 8) {
-                    if (!switchSwapLiveBlank.isChecked) {
-                        liveCount++
-                        textViewCount1.text = liveCount.toString()
-                    } else {
-                        blankCount++
-                        textViewCount1.text = blankCount.toString()
-                    }
-                    updateShells()
+                if (!switchSwapLiveBlank.isChecked) {
+                    liveCount++
+                    textViewCount1.text = liveCount.toString()
+                } else {
+                    blankCount++
+                    textViewCount1.text = blankCount.toString()
                 }
+                updateShells()
+                buttonMinus1.isEnabled = true
+                buttonPlus1.isEnabled = (blankCount + liveCount) != 8
+                buttonPlus2.isEnabled = (blankCount + liveCount) != 8
             }
 
         buttonMinus1
             .setOnClickListener {
                 if (!switchSwapLiveBlank.isChecked) {
-                    if (liveCount != 0) {
-                        liveCount--
-                        textViewCount1.text = liveCount.toString()
-                        updateShells()
-                    }
-                } else if (blankCount != 0) {
+                    liveCount--
+                    textViewCount1.text = liveCount.toString()
+                    updateShells()
+                    buttonMinus1.isEnabled = liveCount != 0
+                } else {
                     blankCount--
                     textViewCount1.text = blankCount.toString()
                     updateShells()
+                    buttonMinus1.isEnabled = blankCount != 0
                 }
+                buttonPlus1.isEnabled = true
+                buttonPlus2.isEnabled = true
             }
 
         buttonPlus2
             .setOnClickListener {
-                if ((blankCount + liveCount) != 8) {
-                    if (!switchSwapLiveBlank.isChecked) {
-                        blankCount++
-                        textViewCount2.text = blankCount.toString()
-                    } else {
-                        liveCount++
-                        textViewCount2.text = liveCount.toString()
-                    }
-                    updateShells()
+                if (!switchSwapLiveBlank.isChecked) {
+                    blankCount++
+                    textViewCount2.text = blankCount.toString()
+                } else {
+                    liveCount++
+                    textViewCount2.text = liveCount.toString()
                 }
+                updateShells()
+                buttonMinus2.isEnabled = true
+                buttonPlus1.isEnabled = (blankCount + liveCount) != 8
+                buttonPlus2.isEnabled = (blankCount + liveCount) != 8
             }
 
         buttonMinus2
             .setOnClickListener {
                 if (!switchSwapLiveBlank.isChecked) {
-                    if (blankCount != 0) {
-                        blankCount--
-                        textViewCount2.text = blankCount.toString()
-                        updateShells()
-                    }
-                } else if (liveCount != 0) {
+                    blankCount--
+                    textViewCount2.text = blankCount.toString()
+                    updateShells()
+                    buttonMinus2.isEnabled = blankCount != 0
+                } else {
                     liveCount--
                     textViewCount2.text = liveCount.toString()
                     updateShells()
+                    buttonMinus2.isEnabled = liveCount != 0
                 }
+                buttonPlus1.isEnabled = true
+                buttonPlus2.isEnabled = true
             }
 
         //Link the shot buttons
         buttonShot1
             .setOnClickListener {
                 if (!switchSwapLiveBlank.isChecked) {
-                    if (liveCount != 0) {
-                        liveCount--
-                        textViewCount1.text = liveCount.toString()
-                        shellShot(true)
-                    }
-                } else if (blankCount != 0) {
+                    liveCount--
+                    textViewCount1.text = liveCount.toString()
+                    shellShot(true)
+                    buttonShot1.isEnabled = liveCount != 0
+                } else {
                     blankCount--
                     textViewCount1.text = blankCount.toString()
                     shellShot(false)
+                    buttonShot1.isEnabled = blankCount != 0
                 }
             }
 
         buttonShot2
             .setOnClickListener {
                 if (!switchSwapLiveBlank.isChecked) {
-                    if (blankCount != 0) {
-                        blankCount--
-                        textViewCount2.text = blankCount.toString()
-                        shellShot(false)
-                    }
-                } else if (liveCount != 0) {
+                    blankCount--
+                    textViewCount2.text = blankCount.toString()
+                    shellShot(false)
+                    buttonShot2.isEnabled = blankCount != 0
+                } else {
                     liveCount--
                     textViewCount2.text = liveCount.toString()
                     shellShot(true)
+                    buttonShot2.isEnabled = liveCount != 0
                 }
             }
 
@@ -267,7 +273,7 @@ class MainActivity : AppCompatActivity() {
 
                     //Set the colors
                     buttonShot1.backgroundTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.blue))
+                        ContextCompat.getColorStateList(this, R.color.blue_button_bg)
                     button1_1.backgroundTintList =
                         ContextCompat.getColorStateList(this, R.color.blank_button_bg)
                     button1_2.backgroundTintList =
@@ -286,7 +292,7 @@ class MainActivity : AppCompatActivity() {
                         ContextCompat.getColorStateList(this, R.color.blank_button_bg)
 
                     buttonShot2.backgroundTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red))
+                        ContextCompat.getColorStateList(this, R.color.red_button_bg)
                     button2_1.backgroundTintList =
                         ContextCompat.getColorStateList(this, R.color.live_button_bg)
                     button2_2.backgroundTintList =
@@ -303,6 +309,10 @@ class MainActivity : AppCompatActivity() {
                         ContextCompat.getColorStateList(this, R.color.live_button_bg)
                     button2_8.backgroundTintList =
                         ContextCompat.getColorStateList(this, R.color.live_button_bg)
+
+                    //Set the buttons
+                    buttonMinus1.isEnabled = blankCount != 0
+                    buttonMinus2.isEnabled = liveCount != 0
 
                 } else {
                     //Set the text
@@ -330,7 +340,7 @@ class MainActivity : AppCompatActivity() {
 
                     //Set the colors
                     buttonShot1.backgroundTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red))
+                        ContextCompat.getColorStateList(this, R.color.red_button_bg)
                     button1_1.backgroundTintList =
                         ContextCompat.getColorStateList(this, R.color.live_button_bg)
                     button1_2.backgroundTintList =
@@ -349,7 +359,7 @@ class MainActivity : AppCompatActivity() {
                         ContextCompat.getColorStateList(this, R.color.live_button_bg)
 
                     buttonShot2.backgroundTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.blue))
+                        ContextCompat.getColorStateList(this, R.color.blue_button_bg)
                     button2_1.backgroundTintList =
                         ContextCompat.getColorStateList(this, R.color.blank_button_bg)
                     button2_2.backgroundTintList =
@@ -366,6 +376,10 @@ class MainActivity : AppCompatActivity() {
                         ContextCompat.getColorStateList(this, R.color.blank_button_bg)
                     button2_8.backgroundTintList =
                         ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+
+                    //Set the buttons
+                    buttonMinus1.isEnabled = liveCount != 0
+                    buttonMinus2.isEnabled = blankCount != 0
                 }
 
                 //Set the states
@@ -431,6 +445,15 @@ class MainActivity : AppCompatActivity() {
                 //Show shot buttons
                 buttonShot1.visibility = View.VISIBLE
                 buttonShot2.visibility = View.VISIBLE
+
+                //Enable shot buttons
+                if (!switchSwapLiveBlank.isChecked) {
+                    buttonShot1.isEnabled = liveCount != 0
+                    buttonShot2.isEnabled = blankCount != 0
+                } else {
+                    buttonShot1.isEnabled = blankCount != 0
+                    buttonShot2.isEnabled = liveCount != 0
+                }
             }
 
         buttonReset
@@ -494,6 +517,12 @@ class MainActivity : AppCompatActivity() {
                 //Hide shot buttons
                 buttonShot1.visibility = View.GONE
                 buttonShot2.visibility = View.GONE
+
+                //Reset the count buttons
+                buttonMinus1.isEnabled = false
+                buttonMinus2.isEnabled = false
+                buttonPlus1.isEnabled = true
+                buttonPlus2.isEnabled = true
             }
     }
 }

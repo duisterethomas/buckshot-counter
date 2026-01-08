@@ -44,15 +44,17 @@
                         android:id="@+id/buttonMinus1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-" />
+                        android:text="-"
+                        android:enabled="false" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ShotLiveButton"
+                        style="@style/BaseThinButton"
+                        android:backgroundTint="@color/red_button_bg"
                         android:id="@+id/buttonShot1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shot"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <!-- Text -->
@@ -131,15 +133,17 @@
                         android:id="@+id/buttonMinus2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-" />
+                        android:text="-"
+                        android:enabled="false" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/ShotBlankButton"
+                        style="@style/BaseThinButton"
+                        android:backgroundTint="@color/blue_button_bg"
                         android:id="@+id/buttonShot2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shot"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -543,7 +547,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start"
-            android:minWidth="56dp"/>
+            android:minWidth="56dp" />
 
         <com.google.android.material.button.MaterialButton
             android:backgroundTint="@color/red"
@@ -553,6 +557,6 @@
             android:layout_height="wrap_content"
             android:text="Reset"
             android:minWidth="56dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

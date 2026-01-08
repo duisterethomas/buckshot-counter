@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.google.android.material.materialswitch.MaterialSwitch
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,35 +30,58 @@ class MainActivity : AppCompatActivity() {
         //Keep screen on
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        val buttonPlusLive = findViewById<MaterialButton>(R.id.buttonPlusLive)
-        val textViewLive = findViewById<TextView>(R.id.textViewLive)
-        val buttonMinusLive = findViewById<MaterialButton>(R.id.buttonMinusLive)
-        val buttonShotLive = findViewById<MaterialButton>(R.id.buttonShotLive)
+        //Find all the elements
+        val buttonPlus1 = findViewById<MaterialButton>(R.id.buttonPlus1)
+        val textView1 = findViewById<TextView>(R.id.textView1)
+        val textViewCount1 = findViewById<TextView>(R.id.textViewCount1)
+        val buttonMinus1 = findViewById<MaterialButton>(R.id.buttonMinus1)
+        val buttonShot1 = findViewById<MaterialButton>(R.id.buttonShot1)
 
-        val buttonPlusBlank = findViewById<MaterialButton>(R.id.buttonPlusBlank)
-        val textViewBlank = findViewById<TextView>(R.id.textViewBlank)
-        val buttonMinusBlank = findViewById<MaterialButton>(R.id.buttonMinusBlank)
-        val buttonShotBlank = findViewById<MaterialButton>(R.id.buttonShotBlank)
+        val buttonPlus2 = findViewById<MaterialButton>(R.id.buttonPlus2)
+        val textView2 = findViewById<TextView>(R.id.textView2)
+        val textViewCount2 = findViewById<TextView>(R.id.textViewCount2)
+        val buttonMinus2 = findViewById<MaterialButton>(R.id.buttonMinus2)
+        val buttonShot2 = findViewById<MaterialButton>(R.id.buttonShot2)
 
         val buttonToggleGroup1 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup1)
+        val button1_1 = findViewById<MaterialButton>(R.id.button1_1)
+        val button2_1 = findViewById<MaterialButton>(R.id.button2_1)
         val checkbox1 = findViewById<CheckBox>(R.id.checkbox1)
         val buttonToggleGroup2 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup2)
+        val button1_2 = findViewById<MaterialButton>(R.id.button1_2)
+        val button2_2 = findViewById<MaterialButton>(R.id.button2_2)
         val checkbox2 = findViewById<CheckBox>(R.id.checkbox2)
         val buttonToggleGroup3 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup3)
+        val button1_3 = findViewById<MaterialButton>(R.id.button1_3)
+        val button2_3 = findViewById<MaterialButton>(R.id.button2_3)
         val checkbox3 = findViewById<CheckBox>(R.id.checkbox3)
         val buttonToggleGroup4 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup4)
+        val button1_4 = findViewById<MaterialButton>(R.id.button1_4)
+        val button2_4 = findViewById<MaterialButton>(R.id.button2_4)
         val checkbox4 = findViewById<CheckBox>(R.id.checkbox4)
         val buttonToggleGroup5 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup5)
+        val button1_5 = findViewById<MaterialButton>(R.id.button1_5)
+        val button2_5 = findViewById<MaterialButton>(R.id.button2_5)
         val checkbox5 = findViewById<CheckBox>(R.id.checkbox5)
         val buttonToggleGroup6 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup6)
+        val button1_6 = findViewById<MaterialButton>(R.id.button1_6)
+        val button2_6 = findViewById<MaterialButton>(R.id.button2_6)
         val checkbox6 = findViewById<CheckBox>(R.id.checkbox6)
         val buttonToggleGroup7 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup7)
+        val button1_7 = findViewById<MaterialButton>(R.id.button1_7)
+        val button2_7 = findViewById<MaterialButton>(R.id.button2_7)
         val checkbox7 = findViewById<CheckBox>(R.id.checkbox7)
         val buttonToggleGroup8 = findViewById<MaterialButtonToggleGroup>(R.id.buttonToggleGroup8)
+        val button1_8 = findViewById<MaterialButton>(R.id.button1_8)
+        val button2_8 = findViewById<MaterialButton>(R.id.button2_8)
         val checkbox8 = findViewById<CheckBox>(R.id.checkbox8)
 
-        val buttonStartReset = findViewById<MaterialButton>(R.id.buttonStartReset)
+        val switchSwapLiveBlank = findViewById<MaterialSwitch>(R.id.switchSwapLiveBlank)
 
+        val buttonStart = findViewById<MaterialButton>(R.id.buttonStart)
+        val buttonReset = findViewById<MaterialButton>(R.id.buttonReset)
+
+        //Set the counters
         var blankCount = 0
         var liveCount = 0
         var currentShot = 0
@@ -81,42 +105,42 @@ class MainActivity : AppCompatActivity() {
             when (currentShot) {
                 1 -> {
                     checkbox1.isChecked = true
-                    buttonToggleGroup1.check(if (live) { R.id.buttonLive1 } else { R.id.buttonBlank1 })
+                    buttonToggleGroup1.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_1 } else { R.id.button2_1 })
                     buttonToggleGroup1.isEnabled = false
                 }
                 2 -> {
                     checkbox2.isChecked = true
-                    buttonToggleGroup2.check(if (live) { R.id.buttonLive2 } else { R.id.buttonBlank2 })
+                    buttonToggleGroup2.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_2 } else { R.id.button2_2 })
                     buttonToggleGroup2.isEnabled = false
                 }
                 3 -> {
                     checkbox3.isChecked = true
-                    buttonToggleGroup3.check(if (live) { R.id.buttonLive3 } else { R.id.buttonBlank3 })
+                    buttonToggleGroup3.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_3 } else { R.id.button2_3 })
                     buttonToggleGroup3.isEnabled = false
                 }
                 4 -> {
                     checkbox4.isChecked = true
-                    buttonToggleGroup4.check(if (live) { R.id.buttonLive4 } else { R.id.buttonBlank4 })
+                    buttonToggleGroup4.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_4 } else { R.id.button2_4 })
                     buttonToggleGroup4.isEnabled = false
                 }
                 5 -> {
                     checkbox5.isChecked = true
-                    buttonToggleGroup5.check(if (live) { R.id.buttonLive5 } else { R.id.buttonBlank5 })
+                    buttonToggleGroup5.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_5 } else { R.id.button2_5 })
                     buttonToggleGroup5.isEnabled = false
                 }
                 6 -> {
                     checkbox6.isChecked = true
-                    buttonToggleGroup6.check(if (live) { R.id.buttonLive6 } else { R.id.buttonBlank6 })
+                    buttonToggleGroup6.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_6 } else { R.id.button2_6 })
                     buttonToggleGroup6.isEnabled = false
                 }
                 7 -> {
                     checkbox7.isChecked = true
-                    buttonToggleGroup7.check(if (live) { R.id.buttonLive7 } else { R.id.buttonBlank7 })
+                    buttonToggleGroup7.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_7 } else { R.id.button2_7 })
                     buttonToggleGroup7.isEnabled = false
                 }
                 8 -> {
                     checkbox8.isChecked = true
-                    buttonToggleGroup8.check(if (live) { R.id.buttonLive8 } else { R.id.buttonBlank8 })
+                    buttonToggleGroup8.check(if (live xor switchSwapLiveBlank.isChecked) { R.id.button1_8 } else { R.id.button2_8 })
                     buttonToggleGroup8.isEnabled = false
                 }
             }
@@ -125,145 +149,351 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Link the counter buttons
-        buttonPlusLive
+        buttonPlus1
             .setOnClickListener {
                 if ((blankCount + liveCount) != 8) {
-                    liveCount++
-                    textViewLive.text = liveCount.toString()
+                    if (!switchSwapLiveBlank.isChecked) {
+                        liveCount++
+                        textViewCount1.text = liveCount.toString()
+                    } else {
+                        blankCount++
+                        textViewCount1.text = blankCount.toString()
+                    }
                     updateShells()
                 }
             }
 
-        buttonMinusLive
+        buttonMinus1
             .setOnClickListener {
-                if (liveCount != 0) {
-                    liveCount --
-                    textViewLive.text = liveCount.toString()
+                if (!switchSwapLiveBlank.isChecked) {
+                    if (liveCount != 0) {
+                        liveCount--
+                        textViewCount1.text = liveCount.toString()
+                        updateShells()
+                    }
+                } else if (blankCount != 0) {
+                    blankCount--
+                    textViewCount1.text = blankCount.toString()
                     updateShells()
                 }
             }
 
-        buttonPlusBlank
+        buttonPlus2
             .setOnClickListener {
                 if ((blankCount + liveCount) != 8) {
-                    blankCount ++
-                    textViewBlank.text = blankCount.toString()
+                    if (!switchSwapLiveBlank.isChecked) {
+                        blankCount++
+                        textViewCount2.text = blankCount.toString()
+                    } else {
+                        liveCount++
+                        textViewCount2.text = liveCount.toString()
+                    }
                     updateShells()
                 }
             }
 
-        buttonMinusBlank
+        buttonMinus2
             .setOnClickListener {
-                if (blankCount != 0) {
-                    blankCount --
-                    textViewBlank.text = blankCount.toString()
+                if (!switchSwapLiveBlank.isChecked) {
+                    if (blankCount != 0) {
+                        blankCount--
+                        textViewCount2.text = blankCount.toString()
+                        updateShells()
+                    }
+                } else if (liveCount != 0) {
+                    liveCount--
+                    textViewCount2.text = liveCount.toString()
                     updateShells()
                 }
             }
 
         //Link the shot buttons
-        buttonShotLive
+        buttonShot1
             .setOnClickListener {
-                if (liveCount != 0) {
-                    liveCount --
-                    textViewLive.text = liveCount.toString()
-                    shellShot(true)
-                }
-            }
-
-        buttonShotBlank
-            .setOnClickListener {
-                if (blankCount != 0) {
-                    blankCount --
-                    textViewBlank.text = blankCount.toString()
+                if (!switchSwapLiveBlank.isChecked) {
+                    if (liveCount != 0) {
+                        liveCount--
+                        textViewCount1.text = liveCount.toString()
+                        shellShot(true)
+                    }
+                } else if (blankCount != 0) {
+                    blankCount--
+                    textViewCount1.text = blankCount.toString()
                     shellShot(false)
                 }
             }
 
-        //Link the clear button
-        buttonStartReset
+        buttonShot2
             .setOnClickListener {
-                if (currentShot == 0) {
-                    //Start the game
-                    currentShot = 1
-
-                    // Change the button to reset
-                    buttonStartReset.backgroundTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red))
-
-                    buttonStartReset.text = "Reset"
-
-                    //Hide plus and minus buttons
-                    buttonPlusLive.visibility = View.GONE
-                    buttonMinusLive.visibility = View.GONE
-                    buttonPlusBlank.visibility = View.GONE
-                    buttonMinusBlank.visibility = View.GONE
-
-                    //Show shot buttons
-                    buttonShotLive.visibility = View.VISIBLE
-                    buttonShotBlank.visibility = View.VISIBLE
-                } else {
-                    //Reset the game
-                    currentShot = 0
-
-                    //Reset counters
-                    blankCount = 0
-                    liveCount = 0
-                    textViewBlank.text = blankCount.toString()
-                    textViewLive.text = liveCount.toString()
-
-                    //Reset known shells
-                    buttonToggleGroup1.isEnabled = true
-                    buttonToggleGroup1.clearChecked()
-                    checkbox1.isChecked = false
-
-                    buttonToggleGroup2.isEnabled = true
-                    buttonToggleGroup2.clearChecked()
-                    checkbox2.isChecked = false
-
-                    buttonToggleGroup3.isEnabled = true
-                    buttonToggleGroup3.clearChecked()
-                    checkbox3.isChecked = false
-
-                    buttonToggleGroup4.isEnabled = true
-                    buttonToggleGroup4.clearChecked()
-                    checkbox4.isChecked = false
-
-                    buttonToggleGroup5.isEnabled = true
-                    buttonToggleGroup5.clearChecked()
-                    checkbox5.isChecked = false
-
-                    buttonToggleGroup6.isEnabled = true
-                    buttonToggleGroup6.clearChecked()
-                    checkbox6.isChecked = false
-
-                    buttonToggleGroup7.isEnabled = true
-                    buttonToggleGroup7.clearChecked()
-                    checkbox7.isChecked = false
-
-                    buttonToggleGroup8.isEnabled = true
-                    buttonToggleGroup8.clearChecked()
-                    checkbox8.isChecked = false
-
-                    //Reset visibility
-                    updateShells()
-
-                    // Change the button to start
-                    buttonStartReset.backgroundTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green))
-
-                    buttonStartReset.text = "Start"
-
-                    //Show plus and minus buttons
-                    buttonPlusLive.visibility = View.VISIBLE
-                    buttonMinusLive.visibility = View.VISIBLE
-                    buttonPlusBlank.visibility = View.VISIBLE
-                    buttonMinusBlank.visibility = View.VISIBLE
-
-                    //Hide shot buttons
-                    buttonShotLive.visibility = View.GONE
-                    buttonShotBlank.visibility = View.GONE
+                if (!switchSwapLiveBlank.isChecked) {
+                    if (blankCount != 0) {
+                        blankCount--
+                        textViewCount2.text = blankCount.toString()
+                        shellShot(false)
+                    }
+                } else if (liveCount != 0) {
+                    liveCount--
+                    textViewCount2.text = liveCount.toString()
+                    shellShot(true)
                 }
+            }
+
+        //Link the swap Live Blank switch
+        switchSwapLiveBlank
+            .setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    //Set the text
+                    textViewCount1.text = blankCount.toString()
+                    textView1.text = "Blank"
+                    button1_1.text = "Blank"
+                    button1_2.text = "Blank"
+                    button1_3.text = "Blank"
+                    button1_4.text = "Blank"
+                    button1_5.text = "Blank"
+                    button1_6.text = "Blank"
+                    button1_7.text = "Blank"
+                    button1_8.text = "Blank"
+
+                    textViewCount2.text = liveCount.toString()
+                    textView2.text = "Live"
+                    button2_1.text = "Live"
+                    button2_2.text = "Live"
+                    button2_3.text = "Live"
+                    button2_4.text = "Live"
+                    button2_5.text = "Live"
+                    button2_6.text = "Live"
+                    button2_7.text = "Live"
+                    button2_8.text = "Live"
+
+                    //Set the colors
+                    buttonShot1.backgroundTintList =
+                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.blue))
+                    button1_1.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_2.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_3.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_4.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_5.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_6.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_7.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button1_8.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+
+                    buttonShot2.backgroundTintList =
+                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red))
+                    button2_1.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_2.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_3.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_4.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_5.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_6.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_7.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button2_8.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+
+                } else {
+                    //Set the text
+                    textViewCount1.text = liveCount.toString()
+                    textView1.text = "Live"
+                    button1_1.text = "Live"
+                    button1_2.text = "Live"
+                    button1_3.text = "Live"
+                    button1_4.text = "Live"
+                    button1_5.text = "Live"
+                    button1_6.text = "Live"
+                    button1_7.text = "Live"
+                    button1_8.text = "Live"
+
+                    textViewCount2.text = blankCount.toString()
+                    textView2.text = "Blank"
+                    button2_1.text = "Blank"
+                    button2_2.text = "Blank"
+                    button2_3.text = "Blank"
+                    button2_4.text = "Blank"
+                    button2_5.text = "Blank"
+                    button2_6.text = "Blank"
+                    button2_7.text = "Blank"
+                    button2_8.text = "Blank"
+
+                    //Set the colors
+                    buttonShot1.backgroundTintList =
+                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red))
+                    button1_1.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_2.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_3.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_4.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_5.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_6.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_7.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+                    button1_8.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.live_button_bg)
+
+                    buttonShot2.backgroundTintList =
+                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.blue))
+                    button2_1.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_2.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_3.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_4.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_5.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_6.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_7.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                    button2_8.backgroundTintList =
+                        ContextCompat.getColorStateList(this, R.color.blank_button_bg)
+                }
+
+                //Set the states
+                if (button1_1.isChecked) {
+                    buttonToggleGroup1.check(R.id.button2_1)
+                } else if (button2_1.isChecked) {
+                    buttonToggleGroup1.check(R.id.button1_1)
+                }
+                if (button1_2.isChecked) {
+                    buttonToggleGroup2.check(R.id.button2_2)
+                } else if (button2_2.isChecked) {
+                    buttonToggleGroup2.check(R.id.button1_2)
+                }
+                if (button1_3.isChecked) {
+                    buttonToggleGroup3.check(R.id.button2_3)
+                } else if (button2_3.isChecked) {
+                    buttonToggleGroup3.check(R.id.button1_3)
+                }
+                if (button1_4.isChecked) {
+                    buttonToggleGroup4.check(R.id.button2_4)
+                } else if (button2_4.isChecked) {
+                    buttonToggleGroup4.check(R.id.button1_4)
+                }
+                if (button1_5.isChecked) {
+                    buttonToggleGroup5.check(R.id.button2_5)
+                } else if (button2_5.isChecked) {
+                    buttonToggleGroup5.check(R.id.button1_5)
+                }
+                if (button1_6.isChecked) {
+                    buttonToggleGroup6.check(R.id.button2_6)
+                } else if (button2_6.isChecked) {
+                    buttonToggleGroup6.check(R.id.button1_6)
+                }
+                if (button1_7.isChecked) {
+                    buttonToggleGroup7.check(R.id.button2_7)
+                } else if (button2_7.isChecked) {
+                    buttonToggleGroup7.check(R.id.button1_7)
+                }
+                if (button1_8.isChecked) {
+                    buttonToggleGroup8.check(R.id.button2_8)
+                } else if (button2_8.isChecked) {
+                    buttonToggleGroup8.check(R.id.button1_8)
+                }
+            }
+
+        //Link the Start and Reset buttons
+        buttonStart
+            .setOnClickListener {
+                //Start the game
+                currentShot = 1
+
+                //Swap Start button with Reset
+                buttonStart.visibility = View.GONE
+                buttonReset.visibility = View.VISIBLE
+
+                //Hide the editing buttons
+                switchSwapLiveBlank.visibility = View.INVISIBLE
+                buttonPlus1.visibility = View.GONE
+                buttonMinus1.visibility = View.GONE
+                buttonPlus2.visibility = View.GONE
+                buttonMinus2.visibility = View.GONE
+
+                //Show shot buttons
+                buttonShot1.visibility = View.VISIBLE
+                buttonShot2.visibility = View.VISIBLE
+            }
+
+        buttonReset
+            .setOnClickListener {
+                //Reset the game
+                currentShot = 0
+
+                //Reset counters
+                blankCount = 0
+                liveCount = 0
+                textViewCount2.text = blankCount.toString()
+                textViewCount1.text = liveCount.toString()
+
+                //Reset known shells
+                buttonToggleGroup1.isEnabled = true
+                buttonToggleGroup1.clearChecked()
+                checkbox1.isChecked = false
+
+                buttonToggleGroup2.isEnabled = true
+                buttonToggleGroup2.clearChecked()
+                checkbox2.isChecked = false
+
+                buttonToggleGroup3.isEnabled = true
+                buttonToggleGroup3.clearChecked()
+                checkbox3.isChecked = false
+
+                buttonToggleGroup4.isEnabled = true
+                buttonToggleGroup4.clearChecked()
+                checkbox4.isChecked = false
+
+                buttonToggleGroup5.isEnabled = true
+                buttonToggleGroup5.clearChecked()
+                checkbox5.isChecked = false
+
+                buttonToggleGroup6.isEnabled = true
+                buttonToggleGroup6.clearChecked()
+                checkbox6.isChecked = false
+
+                buttonToggleGroup7.isEnabled = true
+                buttonToggleGroup7.clearChecked()
+                checkbox7.isChecked = false
+
+                buttonToggleGroup8.isEnabled = true
+                buttonToggleGroup8.clearChecked()
+                checkbox8.isChecked = false
+
+                //Reset visibility
+                updateShells()
+
+                //Swap Reset button with Start
+                buttonStart.visibility = View.VISIBLE
+                buttonReset.visibility = View.GONE
+
+                //Show the editing buttons
+                switchSwapLiveBlank.visibility = View.VISIBLE
+                buttonPlus1.visibility = View.VISIBLE
+                buttonMinus1.visibility = View.VISIBLE
+                buttonPlus2.visibility = View.VISIBLE
+                buttonMinus2.visibility = View.VISIBLE
+
+                //Hide shot buttons
+                buttonShot1.visibility = View.GONE
+                buttonShot2.visibility = View.GONE
             }
     }
 }

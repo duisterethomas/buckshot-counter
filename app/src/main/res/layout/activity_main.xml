@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:gravity="center">
 
-            <!-- Live counter -->
+            <!-- 1st counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,21 +34,21 @@
                     android:layout_marginEnd="10dp">
                     <com.google.android.material.button.MaterialButton
                         style="@style/PlusButton"
-                        android:id="@+id/buttonPlusLive"
+                        android:id="@+id/buttonPlus1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/MinusButton"
-                        android:id="@+id/buttonMinusLive"
+                        android:id="@+id/buttonMinus1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/ShotLiveButton"
-                        android:id="@+id/buttonShotLive"
+                        android:id="@+id/buttonShot1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shot"
@@ -63,6 +63,7 @@
                     android:orientation="vertical"
                     android:paddingVertical="16dp">
                     <TextView
+                        android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Live"
@@ -71,7 +72,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textViewLive"
+                        android:id="@+id/textViewCount1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="0"
@@ -80,7 +81,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Blank counter -->
+            <!-- 2nd counter -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +95,7 @@
                     android:orientation="vertical"
                     android:paddingVertical="16dp">
                     <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Blank"
@@ -102,7 +104,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textViewBlank"
+                        android:id="@+id/textViewCount2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="0"
@@ -119,21 +121,21 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/PlusButton"
-                        android:id="@+id/buttonPlusBlank"
+                        android:id="@+id/buttonPlus2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="+" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/MinusButton"
-                        android:id="@+id/buttonMinusBlank"
+                        android:id="@+id/buttonMinus2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/ShotBlankButton"
-                        android:id="@+id/buttonShotBlank"
+                        android:id="@+id/buttonShot2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shot"
@@ -147,8 +149,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="20dp"
-            android:paddingTop="10dp">
+            android:paddingVertical="10dp">
 
             <!-- Shell 1 -->
             <LinearLayout
@@ -174,7 +175,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive1"
+                        android:id="@+id/button1_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -182,7 +183,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank1"
+                        android:id="@+id/button2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -221,7 +222,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive2"
+                        android:id="@+id/button1_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -229,7 +230,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank2"
+                        android:id="@+id/button2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -268,7 +269,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive3"
+                        android:id="@+id/button1_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -276,7 +277,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank3"
+                        android:id="@+id/button2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -315,7 +316,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive4"
+                        android:id="@+id/button1_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -323,7 +324,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank4"
+                        android:id="@+id/button2_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -362,7 +363,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive5"
+                        android:id="@+id/button1_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -370,7 +371,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank5"
+                        android:id="@+id/button2_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -409,7 +410,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive6"
+                        android:id="@+id/button1_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -417,7 +418,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank6"
+                        android:id="@+id/button2_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -456,7 +457,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive7"
+                        android:id="@+id/button1_7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -464,7 +465,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank7"
+                        android:id="@+id/button2_7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -503,7 +504,7 @@
                     app:singleSelection="true">
                     <com.google.android.material.button.MaterialButton
                         style="@style/LiveButton"
-                        android:id="@+id/buttonLive8"
+                        android:id="@+id/button1_8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -511,7 +512,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/BlankButton"
-                        android:id="@+id/buttonBlank8"
+                        android:id="@+id/button2_8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
@@ -527,14 +528,31 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Start/Reset button -->
+        <!-- Swap Live/Blank switch -->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switchSwapLiveBlank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swap Live/blank" />
+
+        <!-- Start and Reset buttons -->
         <com.google.android.material.button.MaterialButton
             android:backgroundTint="@color/green"
             style="@style/BaseButton"
-            android:id="@+id/buttonStartReset"
+            android:id="@+id/buttonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start"
             android:minWidth="56dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:backgroundTint="@color/red"
+            style="@style/BaseButton"
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:minWidth="56dp"
+            android:visibility="gone"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
